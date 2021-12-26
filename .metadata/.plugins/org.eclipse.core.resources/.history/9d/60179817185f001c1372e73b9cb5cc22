@@ -1,0 +1,14 @@
+/*
+ * TP08-2.c
+ *
+ *  Created on: 17 Ara 2021
+ *      Author: mehme
+ */
+
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+int main(int argc, char* argv[]){
+	int randArr[25];
+	srand(time(0));
+}

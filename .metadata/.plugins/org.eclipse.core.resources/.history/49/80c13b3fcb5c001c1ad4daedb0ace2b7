@@ -1,0 +1,35 @@
+/*
+ * Odev04.c
+ *
+ *  Created on: 14 Ara 2021
+ *      Author: Mehmet Yavuz Katrancý
+ */
+
+#include<stdio.h>
+#define arrSize 50
+int main(){
+	char inputStr[arrSize], upperCase[arrSize], cryptoed[arrSize];
+	printf("Sifrelenecek karakter dizisini girin: ");
+	fflush(stdout);
+	gets();
+    printf("\nSifrelenecek karakter dizisi: " + inputStr);
+	printf("\nBuyuk harfe cevrilmis dizi : " + upperCase);
+    return 0;
+}
+
+void toUpper(char src[], char dest[]){
+    //Kucuk hafler: 97,122
+    for (int i = 0; i < arrSize; i++)
+    {
+        dest[i]=src[i];
+        if(src[i]>=97&&src[i]<=122){
+            dest[i]-=32;
+        }
+    }
+    return;
+
+}
+
+char findMax(char *s){
+
+}

@@ -1,0 +1,8 @@
+23:15:13 **** Incremental Build of configuration Debug for project TP09 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o TP09-OrnekKod6.o "..\\TP09-OrnekKod6.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o TP09-OrnekKod5.o "..\\TP09-OrnekKod5.c" 
+gcc -o TP09.exe TP09-OrnekKod1.o TP09-OrnekKod2.o TP09-OrnekKod3.o TP09-OrnekKod4.o TP09-OrnekKod5.o TP09-OrnekKod6.o 
+
+23:15:14 Build Finished. 0 errors, 0 warnings. (took 467ms)
+

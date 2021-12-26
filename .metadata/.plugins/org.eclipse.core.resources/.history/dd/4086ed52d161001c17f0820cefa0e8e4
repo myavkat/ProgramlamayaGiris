@@ -1,0 +1,70 @@
+/*
+ * Odev05.c
+ *
+ *  Created on: 20 Ara 2021
+ *      Author: mehme
+ */
+
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+
+void strToUpper(char *src);
+void strToLower(char *src);
+void strToSentenceCase(char *src);
+
+int main(int argc, char* argv[]){
+  if(argc<3){
+    printf("Eksik arguman girdiniz!");
+    }
+  else if(argc>=3){
+    if(argc>3){
+      printf("Fazla arguman girdiniz ama olsun, hizmet icin buradayýz...\n");
+      }
+    char inputStr[strlen(argv[2])];
+    char optionParam[strlen(argv[1])];
+    strcpy(inputStr,argv[2]);
+    strcpy(optionParam,argv[1]);
+
+    if(!strcmp(optionParam,"-d")){
+      printf("Girdiginiz karakter dizisi: ");
+    }
+    else if(!strcmp(optionParam,"-u")){
+      strToUpper(inputStr);
+    }
+    else if(!strcmp(optionParam,"-l")){
+      strToLower(inputStr);
+    }
+    else if(!strcmp(optionParam,"-s")){
+      strToSentenceCase(inputStr);
+    }
+    else{
+      printf("Oyle bir opsiyon yok canim. Bye!");
+      return 1;
+    }
+    printf(inputStr);
+  }
+  return 0;
+}
+
+void strToUpper(char* src){
+  for(int i=0;i<strlen(src);i++){
+    src[i]=toupper(src[i]);
+  }
+  return;
+}
+
+void strToLower(char* src){
+  for(int i=0;i<strlen(src);i++){
+    src[i]=tolower(src[i]);
+  }
+  return;
+}
+
+void strToSentenceCase(char* src){
+  src[0]=toupper(src[0]);
+  for(int i=1;i<strlen(src);i++){
+    src[i]=tolower(src[i]);
+  }
+  return;
+}
