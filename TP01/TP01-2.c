@@ -1,16 +1,8 @@
 /*
- * exercise02.c
+ * TP01-2.c
  *
- *  Created on: Oct 20, 2021
- *      Author: Mehmet Yavuz Katrancı
- *      Description:
- *      Yarı ̧cap (r = 5cm)  ve  yukseklik (h = 10cm)  bilgisini  kullanarak  bir  silindirin  sırasıyla
- *      taban alanını, yanal yuzey alanını, toplam y ̈uzey alanını ve hacmini hesaplayıp ekrana bastıran
- *      programın C kodunu yazın. ̈Ornek ekran ̧cıktısı asagıda verilmistir.
- *      La surface de la base : 50.265482
- *      La surface laterale   : 251.327412
- *      La surface totale     : 351.858377
- *      Le volume             : 502.654825
+ *  Created on: 21 Eki 2021
+ *      Author: Mehmet Yavuz Katranc�
  */
 #include <stdio.h>
 
@@ -30,5 +22,4 @@ int main(){
 			"Le volume             : %f\n",
 			tabanAlan, yanalAlan, toplamYuzey, hacim);
 }
-
 

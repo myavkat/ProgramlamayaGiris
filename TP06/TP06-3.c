@@ -2,7 +2,7 @@
  * TP06-3.c
  *
  *  Created on: Dec 1, 2021
- *      Author: Mehmet Yavuz KatrancÄ±
+ *      Author: Mehmet Yavuz Katrancý
  */
 
 #include<stdio.h>
@@ -12,8 +12,8 @@ void swap2(int *a, int *b);
 int main() {
 	int a, b;
 	printf("Entrez 2 entiers a et b: ");
-	scanf("%d %d", &a, &b);
 	fflush(stdout);
+	scanf("%d %d", &a, &b);
 	printf(" Avant swap : a=%d b=%d\n", a, b);
 	swap1(a, b);
 	printf(" Apres swap1: a=%d b=%d\n", a, b);

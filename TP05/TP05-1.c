@@ -2,7 +2,7 @@
  * TP05-1.c
  *
  *  Created on: Nov 17, 2021
- *      Author: Mehmet Yavuz KatrancÄ±
+ *      Author: Mehmet Yavuz Katrancý
  */
 #include <stdio.h>
 #include<limits.h>
@@ -14,14 +14,14 @@ int main() {
 	int gradeList[8];
 	int maxGrade = INT_MIN;
 	int minGrade = INT_MAX;
-	int sumOfGrades = 0;
+	int gradeSum = 0;
 	float gradeAverage;
 	int sizeOfGradeList = (int) sizeof(gradeList) / (int) sizeof(gradeList[0]);
 
 	for (int i = 0; i < sizeOfGradeList; i++) {
 		printf("%d. ogrencinin notunu girin: ", i + 1);
-		scanf("%d", &gradeList[i]);
 		fflush(stdout);
+		scanf("%d", &gradeList[i]);
 	}
 
 	printf("\nOgrencilerin notlari:  ");
@@ -32,9 +32,9 @@ int main() {
 	for (int i = 0; i < sizeOfGradeList; i++) {
 		maxGrade = max(maxGrade, gradeList[i]);
 		minGrade = min(minGrade, gradeList[i]);
-		sumOfGrades += gradeList[i];
+		gradeSum += gradeList[i];
 	}
-	gradeAverage = (float) sumOfGrades / (float) sizeOfGradeList;
+	gradeAverage = (float) gradeSum / (float) sizeOfGradeList;
 	printf("\nOrt  : %f\n", gradeAverage);
 	printf("Min  : %d\n", minGrade);
 	printf("Max  : %d\n", maxGrade);

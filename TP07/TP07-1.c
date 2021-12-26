@@ -2,7 +2,7 @@
  * TP07-1.c
  *
  *  Created on: Dec 8, 2021
- *      Author: Mehmet Yavuz KatrancÄ±
+ *      Author: Mehmet Yavuz Katrancý
  */
 
 #include<stdio.h>

@@ -2,7 +2,7 @@
  * TP06-1.c
  *
  *  Created on: Dec 1, 2021
- *      Author: Mehmet Yavuz KatrancÄ±
+ *      Author: Mehmet Yavuz Katrancý
  */
 
 #include<stdio.h>
