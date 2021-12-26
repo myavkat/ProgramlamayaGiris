@@ -16,8 +16,9 @@ int main(int argc, char* argv[]){
 	int devam = 1;
 	char nameInput[20];
 	char gradeInput[20];
+	char continueInput[5] = "1";
 	char *p;
-	while(devam){
+	while(!strcmp(continueInput,"1")){
 		printf("Entrez le prenom: ");
 		fflush(stdout);
 		if(fgets(nameInput, 20, stdin)!=NULL){
@@ -36,7 +37,10 @@ int main(int argc, char* argv[]){
 
 		printf("Pour continuer [1], pour terminer [0]: ");
 		fflush(stdout);
-		scanf("%d ", &devam);
+		if(fgets(continueInput, 5, stdin)!=NULL){
+			if( (p = strchr(continueInput, '\n')) != NULL)
+				*p='\0';
+		}
 	}
 	printf("Bye bye...\n");
 	return 0;
