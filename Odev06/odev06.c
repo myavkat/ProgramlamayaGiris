@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 	{
 		fscanf(data, "%lf,%lf\n", &realEquation.xValues[i], &realEquation.yValues[i]);
 	}
+	fclose(data);
 
 	//aldigini kontrol etmek icin degerleri ekrana bastirir
 	for (int i = 0; i < N; i++)
@@ -56,9 +57,9 @@ int main(int argc, char *argv[])
 
 	//fonksiyonlarimizin calistigini test etmek icin bir equation olusturur ve y
 	//degerleri ve MSEsini hesaplayıp MSEsini yazdirir
-	int defaultCoEfficients[5] = {1, 1, 1, 1, 1};
+	int defaultCoefficients[5] = {1, 1, 1, 1, 1};
 
-	equation testCase = newEquation(defaultCoEfficients, realEquation.xValues);
+	equation testCase = newEquation(defaultCoefficients, realEquation.xValues);
 
 	computeY(&testCase);
 
@@ -108,7 +109,7 @@ int main(int argc, char *argv[])
 	//brute force deniyordu herhalde tüm değerleri denemeye
 	//Katsayı aralığı küçük olduğu için kullandım, büyük aralıklar için pek efektif bir yöntem değil biliyorum ama çalışıyor :)
 	equation resultEquation;
-	equation testEquation = newEquation(defaultCoEfficients, realEquation.xValues);
+	equation testEquation = newEquation(defaultCoefficients, realEquation.xValues);
 	resultEquation.MSE = 2170000;
 	for (int a = 1; a < 10; a++)
 	{
