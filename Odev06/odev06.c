@@ -4,13 +4,13 @@
 #define N 250 // ornek sayisi
 #define C 5	  // katsayi sayisi
 
-// C adet katsayiyi tutmak icin bir tamsayi dizi, N adet x ve
-// bunlara denk gelen y koordinatlarini tutmak icin ayri ayri iki
-// double dizi ve bir de double hata alani iceren equation isimli
-// bir yapi tanimlayalim
+//coefficientArray holds coefficients
+//xValues holds N x value
+//yValues holds N y value
+//MSE holds the mean squared error of equation
 typedef struct equation
 {
-	int coEfficientArr[C];
+	int coefficientArray[C];
 	double xValues[N];
 	double yValues[N];
 	double MSE;
@@ -112,19 +112,19 @@ int main(int argc, char *argv[])
 	resultEquation.MSE = 2170000;
 	for (int a = 1; a < 10; a++)
 	{
-		testEquation.coEfficientArr[0] = a;
+		testEquation.coefficientArray[0] = a;
 		for (int b = 1; b < 10; b++)
 		{
-			testEquation.coEfficientArr[1] = b;
+			testEquation.coefficientArray[1] = b;
 			for (int c = 1; c < 10; c++)
 			{
-				testEquation.coEfficientArr[2] = c;
+				testEquation.coefficientArray[2] = c;
 				for (int d = 1; d < 10; d++)
 				{
-					testEquation.coEfficientArr[3] = d;
+					testEquation.coefficientArray[3] = d;
 					for (int e = 1; e < 10; e++)
 					{
-						testEquation.coEfficientArr[4] = e;
+						testEquation.coefficientArray[4] = e;
 						computeY(&testEquation);
 						testEquation.MSE = computeMSE(realEquation, testEquation);
 						if (testEquation.MSE < resultEquation.MSE)
@@ -158,12 +158,12 @@ int main(int argc, char *argv[])
 	}
 	for (int i = 0; i < C; i++)
 	{
-		printf("Coefficient %d: %d\n", i + 1, resultEquation.coEfficientArr[i]);
+		printf("Coefficient %d: %d\n", i + 1, resultEquation.coefficientArray[i]);
 	}
 	printf("MSE = %lf\n", resultEquation.MSE);
-	printf("The equation: y = %d(x^4) + %d(x^3) + %d(x^2) + %dx + %d", resultEquation.coEfficientArr[0], 
-			resultEquation.coEfficientArr[1], resultEquation.coEfficientArr[2], 
-			resultEquation.coEfficientArr[3], resultEquation.coEfficientArr[4]);
+	printf("The equation: y = %d(x^4) + %d(x^3) + %d(x^2) + %dx + %d", resultEquation.coefficientArray[0], 
+			resultEquation.coefficientArray[1], resultEquation.coefficientArray[2], 
+			resultEquation.coefficientArray[3], resultEquation.coefficientArray[4]);
 	return 0;
 }
 
@@ -174,7 +174,7 @@ equation newEquation(int c[C], double x[N])
 	equation tmpEquation;
 	for (int i = 0; i < C; i++)
 	{
-		tmpEquation.coEfficientArr[i] = c[i];
+		tmpEquation.coefficientArray[i] = c[i];
 	}
 	for (int i = 0; i < N; i++)
 	{
@@ -193,7 +193,7 @@ void computeY(equation *e)
 		for (int a = 0; a < C; a++)
 		{
 			b -= 1;
-			(*e).yValues[i] += (*e).coEfficientArr[a] * pow((*e).xValues[i], b);
+			(*e).yValues[i] += (*e).coefficientArray[a] * pow((*e).xValues[i], b);
 		}
 	}
 }
@@ -215,7 +215,7 @@ void copyEquation(equation *dest, equation *src)
 {
 	for (int i = 0; i < C; i++)
 	{
-		(*dest).coEfficientArr[i] = (*src).coEfficientArr[i];
+		(*dest).coefficientArray[i] = (*src).coefficientArray[i];
 	}
 	for (int i = 0; i < N; i++)
 	{
