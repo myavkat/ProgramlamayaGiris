@@ -1,0 +1,5 @@
+Programlamaya Giris dersindeyiz.
+Dosya islemlerini tekrarliyoruz.
+Bu dosyayi okuyacagiz.
+Baska dosyaya kopyalayacagiz.
+3 farkli yontemle.
